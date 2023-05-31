@@ -1,4 +1,4 @@
-A web app where users can track their mood, listen to  relaxation ambient sound to improve their mood
+A web To help users track their moods,listen to relaxing ambient sounds to  improve their mood
 
 
 Create - 
