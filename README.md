@@ -1,13 +1,7 @@
-A web app To help users track their moods,listen to relaxing ambient sounds to  improve their mental wellbeing. 
+A web app To help users track their moods , improve mental wellbeing with our mood tracker, nature sounds and mindfully curated playlists. 
 
 
-Create - 
-
-Read 
-
-Create, read , Update , Delete - Individuals can update, edit, delete their daily mood and add note.   
-
-Delete 
+Create, read , Update , Delete - Individuals can update, edit, delete their daily mood and add note.    
 
 
 
