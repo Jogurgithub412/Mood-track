@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import axios from 'axios';
 import authService from '../Services/auth.service';
 
 // Creates React Context with shareable State data
