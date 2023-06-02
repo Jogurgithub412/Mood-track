@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import authService from '../Services/auth.service';
+import {authService} from '../Services/auth.services';
 
 // Creates React Context with shareable State data
 const AuthContext = React.createContext();

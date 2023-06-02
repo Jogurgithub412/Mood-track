@@ -45,4 +45,4 @@ class AuthService {
 // Create one instance object
 const authService = new AuthService();
  
-export default authService;
+export {authService}
