@@ -18,7 +18,6 @@ function NavComponent() {
             <Nav.Link as={Link} to="/">
               Home
             </Nav.Link>
-
             {isLoggedIn ? (
               <>
                 <Nav.Link as={Link} to="/create-mood">
@@ -28,7 +27,14 @@ function NavComponent() {
                 <p>{user && user.name}</p>
               </>
             ) : (
-              <Nav.Link href="#link">Link</Nav.Link>
+              <>
+                <Link to="/signup">
+                  <button>Join Us</button>
+                </Link>
+                <Link to="/login">
+                  <button>Login</button>
+                </Link>
+              </>
             )}
           </Nav>
         </Navbar.Collapse>
