@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: black;
 }
 
 .logo {
@@ -39,4 +40,11 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.navbar-light .navbar-brand {
+  color: white;
+}
+.navbar-light .navbar-brand :hover{
+  color: pu;
 }

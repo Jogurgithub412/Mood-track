@@ -5,34 +5,36 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-function NavComponent() {
+function NavbarComponent() {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
 
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="black" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand href="#home">Mood Tracks</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link as={Link} to="/">
-              Home
+            <Nav.Link as={Link} to="/" className="nav-link">
+            <button>Home</button> 
             </Nav.Link>
             {isLoggedIn ? (
               <>
-                <Nav.Link as={Link} to="/create-mood">
+                <Nav.Link as={Link} to="/create-mood" className="nav-link">
                   Tell us how you are feeling today
                 </Nav.Link>
-                <button onClick={logOutUser}>Logout</button>
+                <button className="logout-button" onClick={logOutUser}>
+                  Logout
+                </button>
                 <p>{user && user.name}</p>
               </>
             ) : (
               <>
                 <Link to="/signup">
-                  <button>Join Us</button>
+                  <button className="auth-button">Join Us</button>
                 </Link>
                 <Link to="/login">
-                  <button>Login</button>
+                  <button className="auth-button">Login</button>
                 </Link>
               </>
             )}
@@ -43,4 +45,4 @@ function NavComponent() {
   );
 }
 
-export default NavComponent;
+export default NavbarComponent;

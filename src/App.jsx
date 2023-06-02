@@ -1,6 +1,6 @@
 import './App.css'
 import {Routes, Route} from 'react-router-dom';
-import NavComponent from './Components/Navbar';
+import NavbarComponent from './Components/Navbar';
 import IsPrivate from './Components/IsPrivate';
 import IsAnon from './Components/IsAnon';
 import SignUpPage from './Pages/SignUp';
@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div className="App">
-    <NavComponent />
+    <NavbarComponent/>
     <Routes>
     <Route path="/signup" element={<IsAnon><SignUpPage/></IsAnon>}/>
     <Route path="/login" element={<IsAnon><LoginPage/></IsAnon>}/>
