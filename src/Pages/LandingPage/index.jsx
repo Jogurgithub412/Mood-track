@@ -35,9 +35,10 @@ import videoBg from '/src/assets/Images/background.mp4'
             </div>
             
             <div className = "moodtrack">
-            <h2>Get matched with relaxing tunes, sounds from nature and the outer space, guided meditation, motivation videos  and 
- enhance you mood instantly </h2>
-                </div>
+            <h2>Tell us how you feel and get matched with mindfully curated selection of relaxing tunes, sounds from nature and the outer space, guided meditation, evenn motivation videos!  </h2></div>
+            <div className = "tunes">
+            <img src="/s"></>
+            </div>
             </main>
             <footer>
               {/* Footer content */}

@@ -153,7 +153,7 @@ transform: rotate(0.2deg);
     float: right;
     margin-top: -450px; 
     position: absolute;
-    right : 180px;
+    right : 260px;
     max-width: 47% ;
     max-height: 47%;
 
@@ -167,13 +167,11 @@ transform: rotate(0.2deg);
     font-family: 'Montserrat','sans-serif';
     font-style: normal;
     font-weight: 600;
-    font-size: 80px;
-    line-height: 73px;
+    font-size: 200px;
+    line-height: 100px;
     display: flex;
     align-items: center;
     text-align: center;
     color: #4C4C4C;
-    margin-top: 1100px;
-
-
+    margin-top: 970px;
 }
