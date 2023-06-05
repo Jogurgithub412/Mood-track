@@ -151,12 +151,11 @@ transform: rotate(0.2deg);
 
 .image {
     float: right;
-    margin-top: -400px; 
+    margin-top: -450px; 
     position: absolute;
-    right : 100px;
-    max-width: 50% ;
-    max-height: 50%;
-
+    right : 180px;
+    max-width: 47% ;
+    max-height: 47%;
 
   }
 
@@ -165,7 +164,7 @@ transform: rotate(0.2deg);
 .moodtrack {
     width: 1400px;
     height: 800px;
-     font-family: 'Montserrat','sans-serif';
+    font-family: 'Montserrat','sans-serif';
     font-style: normal;
     font-weight: 600;
     font-size: 80px;
@@ -175,7 +174,6 @@ transform: rotate(0.2deg);
     text-align: center;
     color: #4C4C4C;
     margin-top: 1100px;
-    width: 1366px;
-height: 698px;
+
 
 }
