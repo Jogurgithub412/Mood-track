@@ -25,14 +25,19 @@ import videoBg from '/src/assets/Images/background.mp4'
                 <div class= "about">
                 <h1>What is Mood Tracking?</h1></div>
                 
+                <div className="container">
                 <div className ="description">
                 <p>Mood tracking can be a useful tool for self-reflection and 
                 understanding one's emotional patterns.
                   By keeping track of your moods over time, you can gain insights into 
             what factors may be influencing your well-being and make positive changes accordingly.</p></div>
-            <div className = "moodtrack">
-                </div>
+            <img src="/src/assets/Images/moodtracker.jpg" alt="Image" className="image" />
+            </div>
             
+            <div className = "moodtrack">
+            <h2>Get matched with relaxing tunes, sounds from nature and the outer space, guided meditation, motivation videos  and 
+ enhance you mood instantly </h2>
+                </div>
             </main>
             <footer>
               {/* Footer content */}

@@ -138,6 +138,7 @@ transform: rotate(0.2deg);
     align-items: center;
     color: gray;
     margin-top : -700px;
+    float:left;
 
 }
 
@@ -145,11 +146,30 @@ transform: rotate(0.2deg);
     background-color: gainsboro;
 }
 
-.moodtracker {
-    position: absolute;
-    width: 570px;
-    height: 533px;
-    left: 1025px;
-    top: 1451px;
-    background-image: url(/src/assets/Images/moodtracker.jpg);
+
+
+.image {
+    float: right;
+    margin-top: 600px; 
+
+  }
+
+
+
+.moodtrack {
+    width: 1400px;
+    height: 800px;
+     font-family: 'Montserrat','sans-serif';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 80px;
+    line-height: 73px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #4C4C4C;
+    margin-top: 1100px;
+    width: 1366px;
+height: 698px;
+
 }
