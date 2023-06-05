@@ -1,6 +1,5 @@
 import React from 'react';
-import logo from '/src/assets/images/greenmoodtracks.png';
-import styles from '/src/Components/Styles/styles.css';
+import logo from '/src/assets/Images/greenmoodtracks.png';
 
 function Navbar() {
   return (
