@@ -1,0 +1,155 @@
+.navbar_item {width: 163px;
+height: 69px;
+font-family: 'Montserrat','sans-serif';
+font-style: normal;
+font-weight: 800;
+font-size: 21.9286px;
+line-height: 29px;
+display: flex;
+align-items: flex-end;
+color: transparent;
+flex: none;
+order: 0;
+flex-grow: 0;
+text-align: right; 
+display: inline-block;
+width: 172px;
+margin-right: auto;
+position: relative; 
+top: 12px;
+color: black;
+}
+
+.navbar_logo {
+    margin-right:auto;
+    margin-top: auto;
+    width: 478px;
+height: 138px;
+position: relative;
+
+
+}
+
+.login-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 31.3265px;
+    gap: 20.44px;
+    width: 225px;
+    height: 75.18px;
+    background: greenyellow;
+    color: #FFFFFF;
+    border-radius: 75px;
+flex: none;
+font-family: 'Montserrat','sans-serif';
+text-align: center;
+line-height: 1;
+font-style: normal;
+font-weight: 700;
+font-size: 21.9286px;
+line-height: 27px;
+display: flex;
+color: #373737;
+margin-left: auto;
+top: -10px;
+position: relative;
+}
+
+.header {
+width: 1125.15px;
+height: 200.18px;
+font-family: 'Montserrat','sans-serif';
+font-style: normal;
+font-weight: 300;
+font-size: 200;
+line-height: 73px;
+display: flex;
+align-items: center;
+color: #4C4C4C;
+
+transform: rotate(0.2deg);
+}
+
+.paragraph {
+    width: 1366.02px;
+    height: 20.52px;
+    font-family: 'Montserrat','san-serif';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #828282;
+    transform: rotate(0.2deg);
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+    margin-top: 20px;
+
+}
+
+.get-started {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+    background-color: greenyellow;
+    color: black;
+    border-radius: 100px;
+    position: absolute;
+    padding: 40px;
+    margin-top: 140px;
+    
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 82px; 
+    position: absolute;
+    width: 964px;
+    height: 297px;
+    left: 89px;
+    top: 1372px;
+    margin-top: -400px;
+
+}
+
+.description {
+    position: absolute;
+    width: 986px;
+    height: 598px;
+    left: 89px;
+    top: 1647px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 48px;
+    display: flex;
+    align-items: center;
+    color: gray;
+    margin-top : -700px;
+
+}
+
+.body {
+    background-color: gainsboro;
+}
+
+.moodtracker {
+    position: absolute;
+    width: 570px;
+    height: 533px;
+    left: 1025px;
+    top: 1451px;
+    background-image: url(/src/assets/Images/moodtracker.jpg);
+}

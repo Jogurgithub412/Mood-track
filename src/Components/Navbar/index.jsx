@@ -1,46 +1,23 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { AuthContext } from '../../Context/auth.context';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import React from 'react';
+import logo from '/src/assets/images/greenmoodtracks.png';
+import styles from '/src/Components/Styles/styles.css';
 
-function NavComponent() {
-  const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
-
+function Navbar() {
   return (
-    <Navbar bg="light" expand="lg">
-      <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link as={Link} to="/">
-              Home
-            </Nav.Link>
-            {isLoggedIn ? (
-              <>
-                <Nav.Link as={Link} to="/create-mood">
-                  Tell us how you are feeling today
-                </Nav.Link>
-                <button onClick={logOutUser}>Logout</button>
-                <p>{user && user.name}</p>
-              </>
-            ) : (
-              <>
-                <Link to="/signup">
-                  <button>Join Us</button>
-                </Link>
-                <Link to="/login">
-                  <button>Login</button>
-                </Link>
-              </>
-            )}
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <nav className="navbar">
+      <div className="navbar_logo">
+        <img src={logo} alt="Logo" />
+      </div>
+      <ul className="navbar_menu">
+        <li className="navbar_item"><a href="#" className="navbar_link">Home</a></li>
+        <li className="navbar_item"><a href="#" className="navbar_link">About</a></li>
+
+     </ul>
+
+     <button className="login-button">Login</button>
+      
+    </nav>
   );
 }
 
-export default NavComponent;
+export default Navbar;
