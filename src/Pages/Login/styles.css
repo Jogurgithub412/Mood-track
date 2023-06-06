@@ -1,0 +1,23 @@
+.LoginPage {
+
+    position: absolute;
+    width: 487.38px;
+    height: 71.27px;
+    left: 559.31px;
+    top: 198.73px;
+    
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 55.2264px;
+    line-height: 72px;
+    /* identical to box height, or 130% */
+    
+    text-align: center;
+    
+    /* Heading */
+    
+    color: #212B27;
+    
+
+}

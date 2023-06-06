@@ -2,6 +2,9 @@ import {useState, useContext} from 'react';
 import {Link, useNavigate} from 'react-router-dom'; 
 import {authService} from '../../Services/auth.services';
 import { AuthContext } from '../../Context/auth.context';
+import styles from '/src/Components/Styles/styles.css';
+
+
 
 function LoginPage() {
   // Write State 
@@ -44,7 +47,7 @@ function LoginPage() {
     
 
   return (
-    <div className="LoginPage">
+    <div className="Login">
     <h1>Login</h1>
 
     <form onSubmit={handleLoginSubmit}>
@@ -63,13 +66,12 @@ function LoginPage() {
         value={password}
         onChange={handlePassword}
       />
-
+        <div className = "Submit">
       <button type="submit">Login</button>
+      </div>
     </form>
     { errorMessage && <p className="error-message">{errorMessage}</p> }
 
-    <p>Don't have an account yet?</p>
-    <Link to={"/signup"}> Sign Up</Link>
   </div>
   )
 }

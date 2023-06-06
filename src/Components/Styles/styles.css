@@ -151,9 +151,9 @@ transform: rotate(0.2deg);
 
 .image {
     float: right;
-    margin-top: -450px; 
+    margin-top: -300px; 
     position: absolute;
-    right : 260px;
+    right : 230px;
     max-width: 47% ;
     max-height: 47%;
 
@@ -166,12 +166,81 @@ transform: rotate(0.2deg);
     height: 800px;
     font-family: 'Montserrat','sans-serif';
     font-style: normal;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 200px;
     line-height: 100px;
     display: flex;
     align-items: center;
     text-align: center;
     color: #4C4C4C;
-    margin-top: 970px;
+    margin-top: 1000px;
+    margin-left: -100px;
 }
+
+
+
+
+.image-row {
+    display: flex;
+    margin-top: -250px;
+    margin-right : -20px;
+    grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px; 
+  margin-left: 230px;
+  }
+  
+  .image-row img {
+    flex: 1;
+    max-width: 25%;
+    height:25%;
+  }
+
+  .video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio for responsive sizing */
+    margin-top: 100px;
+    margin-left: 190px;
+     
+  }
+  
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 75%;
+    height: 75%;
+
+  }
+
+  .LoginPage {
+
+    position: absolute;
+    width: 704px;
+    height: 690px;
+    left: 451px;
+    top: 131px;
+    position: absolute;
+width: 487.38px;
+height: 71.27px;
+left: 559.31px;
+top: 198.73px;
+
+font-family: 'Karla';
+font-style: normal;
+font-weight: 700;
+font-size: 55.2264px;
+line-height: 72px;
+/* identical to box height, or 130% */
+
+text-align: center;
+
+/* Heading */
+
+color: #212B27;
+
+    
+
+
+  }

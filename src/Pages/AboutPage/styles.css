@@ -1,0 +1,29 @@
+.about-page
+ {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+  color: grey; 
+ }
+      
+.centered-content
+ {
+ text-align: center;
+ line-height: 10;
+ padding-top : -20px;
+}
+
+.img  {
+    width: 50%;
+    height: 50%;
+}
+
+.name {
+text-align: center;
+padding-top: 20px;   
+}
+
+.description {
+padding-top: -100px;
+}

@@ -1,0 +1,41 @@
+.mood-tracker {
+  max-width: 300px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.mood-options {
+  align-items: center;
+  justify-content: center;
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(5, 2fr);
+  grid-template-rows: repeat(4, auto);
+  margin-top: 40px;
+}
+
+.mood-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 100px;
+  color: grey;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: transform 0.2s ease-in-out;
+}
+
+.mood-option:hover {
+  transform: scale(1.1);
+}
+
+.mood-option.selected {
+  transform: scale(1.2);
+}
+
+
+
+p {
+  text-align: center;
+}
