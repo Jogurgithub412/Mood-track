@@ -5,8 +5,11 @@
  align-items: center;
  height: 100vh;
   color: grey; 
+  font-weight: 20px;
+  vertical-align: top;
+  margin-top: -40px;
+
  }
-      
 .centered-content
  {
  text-align: center;

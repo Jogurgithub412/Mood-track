@@ -9,6 +9,7 @@ import LandingPage from './Pages/LandingPage';
 import MoodTracker from './Pages/MoodTracker';
 import MoodSound from './Pages/MoodSound';
 import AboutPage from './Pages/AboutPage';
+import DateSelection from "./Pages/DateSelection";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
         <Route path="/signup" element={<IsAnon><SignUpPage/></IsAnon>} />
         <Route path="/login" element={<IsAnon><LoginPage/></IsAnon>} />
         <Route path="/" element={<LandingPage />} />
-        <Route path="/home" element={<IsAnon><MoodTracker/></IsAnon>} />
+        <Route path="/home" element={<IsAnon><MoodTracker/><DateSelection/></IsAnon>} />
         <Route path="/sound" element={<IsAnon><MoodSound/></IsAnon>} />
         <Route path="/about" element={<AboutPage/>} />
       </Routes>
