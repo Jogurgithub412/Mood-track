@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import styles from '/src/Pages/MoodTracker/styles.css'
-
+import "/src/Pages/MoodTracker/styles.css";
 
 const MoodTracker = () => {
   const [moods, setMoods] = useState([]);
@@ -59,11 +58,9 @@ const MoodTracker = () => {
           ))
         ) : (
           <h1>Loading...</h1>
-          
         )}
-        
-        </div>
-        <div className="comment-section">
+      </div>
+      <div className="comment-section">
         <h3></h3>
         <form onSubmit={handleSubmit}>
           <textarea
@@ -76,8 +73,6 @@ const MoodTracker = () => {
         </form>
       </div>
     </div>
-     
-  
   );
 };
 

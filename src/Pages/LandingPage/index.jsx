@@ -1,6 +1,5 @@
 import React from "react";
-import Navbar from "../../Components/Navbar";
-import styles from "/src/Components/Styles/styles.css";
+import "/src/Components/Styles/styles.css";
 
 function LandingPage() {
   return (

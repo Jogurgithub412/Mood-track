@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { authService } from "../../Services/auth.services";
 import { AuthContext } from "../../Context/auth.context";
-import styles from "/src/Components/Styles/styles.css";
+import "/src/Components/Styles/styles.css";
 
 function LoginPage() {
   // Write State
