@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import "/src/Pages/MoodTracker/styles.css";
-
+import "./styles.css";
 const MoodTracker = () => {
   const [moods, setMoods] = useState([]);
   const [selectedMood, setSelectedMood] = useState(null);
