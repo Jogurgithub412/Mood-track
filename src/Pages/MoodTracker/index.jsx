@@ -51,7 +51,7 @@ const MoodTracker = () => {
               style={{ backgroundColor: mood.color }}
               onClick={() => handleMoodSelection(mood)}
             >
-              <Link to="/src/Pages/MoodSound">
+              <Link to="/Pages/MoodSound">
                 <h3>{mood.mood}</h3>
                 <p>{mood.comment}</p>
               </Link>

@@ -1,0 +1,20 @@
+.mood-sound-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
+  
+  .sound-item {
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .sound-item img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+  }
+  
+  .sound-item h3 {
+    margin-top: 10px;
+  }

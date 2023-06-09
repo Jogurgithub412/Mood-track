@@ -18,7 +18,7 @@ function LandingPage() {
         </div>
       </header>
 
-      <a href="/signup " className="get-started">
+      <a href="/signup" className="get-started">
         Get Started
       </a>
       <main>
