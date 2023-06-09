@@ -1,5 +1,4 @@
 import React from "react";
-import "./styles.css";
 function LandingPage() {
   return (
     <div className="landing-page">
