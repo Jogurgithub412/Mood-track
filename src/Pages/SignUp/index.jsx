@@ -4,9 +4,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { authService } from "../../Services/auth.services";
 
 function SignUpPage() {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
 
   const navigate = useNavigate();
@@ -39,6 +39,10 @@ function SignUpPage() {
 
       <form onSubmit={handleSignupSubmit}>
         <div>
+        <div>
+          <label>UserName:</label>
+          <input type="text" name="name" value={name} onChange={handleName} />
+        </div>
           <label>Email:</label>
           <input
             type="email"
@@ -56,10 +60,7 @@ function SignUpPage() {
             onChange={handlePassword}
           />
         </div>
-        <div>
-          <label>Name:</label>
-          <input type="text" name="name" value={name} onChange={handleName} />
-        </div>
+        
         <div>
           <button type="submit">Sign Up</button>
         </div>
@@ -67,8 +68,7 @@ function SignUpPage() {
 
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-      <p>Already have account?</p>
-      <Link to={"/login"}> Login</Link>
+     
     </div>
   );
 }

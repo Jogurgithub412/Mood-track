@@ -8,7 +8,7 @@ const AboutPage = () => {
       <div className="centered-content">
         <div className="team">
           <h1>Meet The Team</h1>
-          <img src="/src/assets/Images/jo.png" alt="jo" />
+          <img src="/src/assets/Images/jo.png" alt="jo"/>
         </div>
         <div className="name">
           <ul></ul>
@@ -19,7 +19,7 @@ const AboutPage = () => {
             Advocate
           </h5>
         </div>
-        <h5>Loves psychology, plants, travelling and Techno </h5>
+        <h5>Loves psychology,astrology, astronomy, plants, travelling and Techno </h5>
       </div>
     </div>
   );

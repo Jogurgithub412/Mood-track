@@ -1,23 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import "./styles.css";
+import "../MoodTracker/styles.css";
+
+const apiURL = import.meta.env.VITE_APP_SERVER_URL
 const MoodTracker = () => {
   const [moods, setMoods] = useState([]);
   const [selectedMood, setSelectedMood] = useState(null);
   const [comment, setComment] = useState("");
   const [selectedDate, setSelectedDate] = useState(null);
 
-  useEffect(() => {
+ useEffect(() => {
     axios
-      .get("http://localhost:5005/api/get-mood")
+      .get(`${apiURL}/moodsound`)
       .then((response) => {
         setMoods(response.data);
       })
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, []); 
 
   const handleMoodSelection = (mood) => {
     setSelectedMood(mood);
@@ -38,7 +40,9 @@ const MoodTracker = () => {
   return (
     <div className="mood-tracker">
       <h3>How are you feeling</h3>
-      <div className="mood-options">
+     
+       <div className="mood-options">
+
         {moods ? (
           moods.map((mood, index) => (
             <div
@@ -57,8 +61,8 @@ const MoodTracker = () => {
           ))
         ) : (
           <h1>Loading...</h1>
-        )}
-      </div>
+         )} 
+      </div>  
       <div className="comment-section">
         <h3></h3>
         <form onSubmit={handleSubmit}>

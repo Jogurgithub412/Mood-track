@@ -24,8 +24,12 @@ function Navbar() {
         Login
       </a>
       <a onClick={() => localStorage.clear()} button className="login-button">
+
+      <a href="/" button className="logout-button">
         Logout
       </a>
+      <a onClick={() => localStorage.clear()} button className="logout-button">
+      </a></a>
     </nav>
   );
 }

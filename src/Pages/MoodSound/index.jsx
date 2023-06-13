@@ -1,18 +1,18 @@
 import React from 'react';
+import "./styles.css"
 
 const MoodSound = () => {
   const moodSounds = [
     {
-      id: 1,
       name: 'Birds',
       imageUrl: '/src/assets/Images/birds.png',
       songUrl: '/src/assets/Sounds/birds.mp3',
     },
     {
-      id: 2,
-      name: 'Sound 2',
-      imageUrl: 'sound2.jpg',
-      songUrl: 'song2.mp3',
+
+      name: 'Camp Fire',
+      imageUrl: '/src/assets/Images/camp fire.png',
+      songUrl: '/src/assets/Sounds/campfire.mp3',
     },
     // Add more mood sound objects as needed
   ];

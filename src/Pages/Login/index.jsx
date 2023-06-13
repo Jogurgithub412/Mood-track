@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { authService } from "../../Services/auth.services";
 import { AuthContext } from "../../Context/auth.context";
 import "./styles.css";
+
+
 function LoginPage() {
   // Write State
   const [email, setEmail] = useState("");
@@ -42,7 +44,7 @@ function LoginPage() {
 
   return (
     <div className="Login">
-      <h1>Login</h1>
+      <h2>Login</h2>
 
       <form onSubmit={handleLoginSubmit}>
         <label>Email:</label>

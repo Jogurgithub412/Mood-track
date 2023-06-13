@@ -1,4 +1,4 @@
-import './App.css';
+import './Components/styles/styles.css';
 import { Routes, Route } from 'react-router-dom';
 import NavbarComponent from './Components/Navbar';
 import IsPrivate from './Components/IsPrivate';
@@ -10,18 +10,23 @@ import MoodTracker from './Pages/MoodTracker';
 import MoodSound from './Pages/MoodSound';
 import AboutPage from './Pages/AboutPage';
 import DateSelection from "./Pages/DateSelection";
+import Logout from './Pages/Logout';
+
 
 function App() {
+  //check localstorage for an access token 
   return (
     <div className="App">
       <NavbarComponent />
+      
       <Routes>
+      <Route path="/" element={<LandingPage/>} />
         <Route path="/signup" element={<IsAnon><SignUpPage/></IsAnon>} />
         <Route path="/login" element={<IsAnon><LoginPage/></IsAnon>} />
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/home" element={<IsAnon><MoodTracker/><DateSelection/></IsAnon>} />
+        <Route path="/home" element={<MoodTracker/>} />
         <Route path="/sound" element={<IsAnon><MoodSound/></IsAnon>} />
         <Route path="/about" element={<AboutPage/>} />
+        <Route path="/" element={<IsAnon><Logout/></IsAnon>} />
       </Routes>
     </div>
   );
