@@ -26,6 +26,11 @@ class ProjectsService {
     return this.api.post('/api/projects', requestBody);
   };
 
+  createMood = requestBody => {
+    console.log(JSON.stringify(requestBody))
+    return this.api.post('/api/create-mood', requestBody);
+  };
+
   // GET /api/projects
   getAllProjects = () => {
     return this.api.get('/api/projects');

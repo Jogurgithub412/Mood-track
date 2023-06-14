@@ -20,9 +20,9 @@ function LandingPage() {
       </a>
       <main>
         {/* Main content */}
-        <section id="about" class="about"></section>
+        <section id="about" className="about"></section>
 
-        <div class="about">
+        <div className="about">
           <h1>What is Mood Tracking?</h1>
         </div>
 
@@ -61,7 +61,6 @@ function LandingPage() {
             width="560"
             height="315"
             src="https://www.youtube.com/embed/wkse4PPxkk4"
-            frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           ></iframe>
         </div>

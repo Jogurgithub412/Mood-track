@@ -2,20 +2,24 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import DatePicker from "react-datepicker";
 import Styles from "../MoodTracker/styles.css";
+import projectsService from '../../Services/project.services';
 
 function MoodTracker() {
   
   const [mood, setMood] = useState('');
   const [comment, setComment] = useState('');
   const [selectedDate, setSelectedDate] = useState([]);
+  
+  
+
 
   // ... Rest of the component code ...
 
-  const handleMoodChange = () => {
-    setMood(mood.target.value);
+  const handleMoodChange = (event) => {
+    setMood(event.target.value);
   };
-  const handleCommentChange = () => {
-    setComment(comment.target.value);
+  const handleCommentChange = (event) => {
+    setComment(event.target.value);
   };
 
   const handleDateChange = () => {
@@ -26,10 +30,10 @@ function MoodTracker() {
     const data = {
       mood,
       comment,
-      date: selectedDate.toISOString() // Convert date to ISO string
-    };
+    /*  date: selectedDate.toISOString() // Convert date to ISO string */
+    }; 
 
-    axios.post('/api/mood', data)
+    projectsService.createMood(data) 
       .then(response => {
         console.log('Data saved successfully!', response.data);
         setMood('');
@@ -45,9 +49,8 @@ function MoodTracker() {
   return (
     <div>
       <h3>How are you feeling today? </h3>
-      <div>
-        <label>
-        
+      <form>
+       <label>
           <select value={mood} onChange={handleMoodChange}>
             <option value="">Select Mood</option>
             <option value="Happy">Happy</option>
@@ -64,21 +67,22 @@ function MoodTracker() {
             <option value="Fed Up">Fed Up</option>
           </select>
         </label>
-      </div>
-      <div>
         <label>
+
           Comment:
           <textarea value={comment} onChange={handleCommentChange} />
         </label>
-      </div>
-      <div>
+     {/*  <div>
         <label>
           Date:
           <DatePicker selected={selectedDate} onChange={handleDateChange} />
         </label>
-      </div>
+      </div> */}
+      
       <button onClick={handleSave}>Save</button>
+      </form>
     </div>
+
   );
 }
 
