@@ -9,9 +9,8 @@ import LandingPage from './Pages/LandingPage';
 import MoodTracker from './Pages/MoodTracker';
 import MoodSound from './Pages/MoodSound';
 import AboutPage from './Pages/AboutPage';
-import DateSelection from "./Pages/DateSelection";
 import Logout from './Pages/Logout';
-
+import DatePicker from "react-datepicker";
 
 function App() {
   //check localstorage for an access token 

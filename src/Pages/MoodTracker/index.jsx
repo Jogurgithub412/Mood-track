@@ -1,82 +1,85 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
-import "../MoodTracker/styles.css";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import DatePicker from "react-datepicker";
+import Styles from "../MoodTracker/styles.css";
 
-const apiURL = import.meta.env.VITE_APP_SERVER_URL
-const MoodTracker = () => {
-  const [moods, setMoods] = useState([]);
-  const [selectedMood, setSelectedMood] = useState(null);
-  const [comment, setComment] = useState("");
-  const [selectedDate, setSelectedDate] = useState(null);
+function MoodTracker() {
+  
+  const [mood, setMood] = useState('');
+  const [comment, setComment] = useState('');
+  const [selectedDate, setSelectedDate] = useState([]);
 
- useEffect(() => {
-    axios
-      .get(`${apiURL}/moodsound`)
-      .then((response) => {
-        setMoods(response.data);
+  // ... Rest of the component code ...
+
+  const handleMoodChange = () => {
+    setMood(mood.target.value);
+  };
+  const handleCommentChange = () => {
+    setComment(comment.target.value);
+  };
+
+  const handleDateChange = () => {
+    setSelectedDate(date);
+  };
+
+  const handleSave = () => {
+    const data = {
+      mood,
+      comment,
+      date: selectedDate.toISOString() // Convert date to ISO string
+    };
+
+    axios.post('/api/mood', data)
+      .then(response => {
+        console.log('Data saved successfully!', response.data);
+        setMood('');
+        setComment('');
+        setSelectedDate(null);
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(error => {
+        console.error('Error saving data:', error);
       });
-  }, []); 
-
-  const handleMoodSelection = (mood) => {
-    setSelectedMood(mood);
   };
 
-  const handleCommentChange = (event) => {
-    setComment(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Perform any desired actions with the comment data, such as sending it to a server
-    console.log(comment);
-    // Reset the form after submission
-    setComment("");
-  };
 
   return (
-    <div className="mood-tracker">
-      <h3>How are you feeling</h3>
-     
-       <div className="mood-options">
-
-        {moods ? (
-          moods.map((mood, index) => (
-            <div
-              key={index}
-              className={`mood-option ${
-                selectedMood === mood ? "selected" : ""
-              }`}
-              style={{ backgroundColor: mood.color }}
-              onClick={() => handleMoodSelection(mood)}
-            >
-              <Link to="/Pages/MoodSound">
-                <h3>{mood.mood}</h3>
-                <p>{mood.comment}</p>
-              </Link>
-            </div>
-          ))
-        ) : (
-          <h1>Loading...</h1>
-         )} 
-      </div>  
-      <div className="comment-section">
-        <h3></h3>
-        <form onSubmit={handleSubmit}>
-          <textarea
-            value={comment}
-            onChange={handleCommentChange}
-            placeholder="Write your comment here..."
-            required
-          ></textarea>
-          <button type="submit">Submit</button>
-        </form>
+    <div>
+      <h3>How are you feeling today? </h3>
+      <div>
+        <label>
+        
+          <select value={mood} onChange={handleMoodChange}>
+            <option value="">Select Mood</option>
+            <option value="Happy">Happy</option>
+            <option value="Excited">Excited</option>
+            <option value="Relaxed">Relaxed</option>
+            <option value="Bored">Bored</option>
+            <option value="Apathetic">Apathetic</option>
+            <option value="Lonely">Lonely</option>
+            <option value="Sad">Sad</option>
+            <option value="Frustrated">Frustrated</option>
+            <option value="Anxious">Anxious</option>
+            <option value="Irritated">Irritated</option>
+            <option value="Livid">Livid</option>
+            <option value="Fed Up">Fed Up</option>
+          </select>
+        </label>
       </div>
+      <div>
+        <label>
+          Comment:
+          <textarea value={comment} onChange={handleCommentChange} />
+        </label>
+      </div>
+      <div>
+        <label>
+          Date:
+          <DatePicker selected={selectedDate} onChange={handleDateChange} />
+        </label>
+      </div>
+      <button onClick={handleSave}>Save</button>
     </div>
   );
-};
+}
 
 export default MoodTracker;
