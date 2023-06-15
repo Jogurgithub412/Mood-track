@@ -1,34 +1,18 @@
-import React from 'react';
-import "./styles.css"
+import React from "react";
 
-const MoodSound = () => {
-  const moodSounds = [
-    {
-      name: 'Birds',
-      imageUrl: '/src/assets/Images/birds.png',
-      songUrl: '/src/assets/Sounds/birds.mp3',
-    },
-    {
-
-      name: 'Camp Fire',
-      imageUrl: '/src/assets/Images/camp fire.png',
-      songUrl: '/src/assets/Sounds/campfire.mp3',
-    },
-    // Add more mood sound objects as needed
-  ];
-
-  const handleSoundClick = (songUrl) => {
-    // Logic to handle the click on the sound item
-    // For example, redirect the user to the song URL
-    window.location.href = songUrl;
-  };
-
+function MoodSound({ moodSounds }) {
   return (
     <div>
-      <h1>Mood Sound Page</h1>
-      <MoodSoundGrid moodSounds={moodSounds} onSoundClick={handleSoundClick} />
+      <h2>Listen to some calming sounds from nature and the cosmos to boost your mood </h2>
+      {moodSounds.map((moodSound) => (
+        <div key={moodSound.id}>
+          <h3>{moodSound.title}</h3>
+          <img src={moodSound.imageUrl} alt={moodSound.title} />
+          <audio src={moodSound.audioUrl} controls />
+        </div>
+      ))}
     </div>
   );
-};
+}
 
 export default MoodSound;

@@ -1,17 +1,17 @@
-import axios from 'axios';
+import axios from "axios";
 
 /* Axios Service that deals with Project Requests */
 
 class ProjectsService {
   constructor() {
     this.api = axios.create({
-      baseURL: import.meta.env.VITE_APP_SERVER_URL || 'http://localhost:5005'
+      baseURL: import.meta.env.VITE_APP_SERVER_URL,
     });
 
     // Automatically set JWT token in the headers for every request
-    this.api.interceptors.request.use(config => {
+    this.api.interceptors.request.use((config) => {
       // Retrieve the JWT token from the local storage
-      const storedToken = localStorage.getItem('authToken');
+      const storedToken = localStorage.getItem("authToken");
 
       if (storedToken) {
         config.headers = { Authorization: `Bearer ${storedToken}` };
@@ -22,37 +22,28 @@ class ProjectsService {
   }
 
   // POST /api/projects
-  createProject = requestBody => {
-    return this.api.post('/api/projects', requestBody);
+  createProject = (requestBody) => {
+    return this.api.post("/api/projects", requestBody);
   };
 
-  createMood = requestBody => {
-    console.log(JSON.stringify(requestBody))
-    return this.api.post('/api/create-mood', requestBody);
+  createMood = (requestBody) => {
+    return this.api.post("/api/create-mood", requestBody);
   };
 
-  // GET /api/projects
-  getAllProjects = () => {
-    return this.api.get('/api/projects');
+  
+
+
+  updateMood = (id, requestBody) => {
+    return this.api.put(`/api/update-mood/${id}`, requestBody);
   };
 
-  // GET /api/projects/:id
-  getProject = id => {
-    return this.api.get(`/api/projects/${id}`);
-  };
-
-  // PUT /api/projects/:id
-  updateProject = (id, requestBody) => {
-    return this.api.put(`/api/projects/${id}`, requestBody);
-  };
-
-  // DELETE /api/projects/:id
-  deleteProject = id => {
-    return this.api.delete(`/api/projects/${id}`);
+  deleteMood = (id) => {
+    return this.api.delete(`/api/delete-mood/${id}`);
   };
 }
+
 
 // Create one instance object
 const projectsService = new ProjectsService();
 
-export default projectsService;
+export default ProjectsService;

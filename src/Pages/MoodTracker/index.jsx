@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import DatePicker from "react-datepicker";
 import Styles from "../MoodTracker/styles.css";
-import projectsService from '../../Services/project.services';
+import projectsService from "../../Services/project.services";
+import MoodList from "../MoodList/index";
+import { useNavigate } from "react-router-dom";
 
 function MoodTracker() {
-  
-  const [mood, setMood] = useState('');
-  const [comment, setComment] = useState('');
+  const [mood, setMood] = useState("");
+  const [comment, setComment] = useState("");
+  const [allMoods, setMoods] = useState("");
   const [selectedDate, setSelectedDate] = useState([]);
-  
-  
-
+  const navigate = useNavigate()
 
   // ... Rest of the component code ...
 
@@ -26,31 +26,44 @@ function MoodTracker() {
     setSelectedDate(date);
   };
 
-  const handleSave = () => {
+  const handleSave = (e) => {
+    e.preventDefault();
     const data = {
       mood,
       comment,
-    /*  date: selectedDate.toISOString() // Convert date to ISO string */
-    }; 
+      /*  date: selectedDate.toISOString() // Convert date to ISO string */
+    };
 
-    projectsService.createMood(data) 
-      .then(response => {
-        console.log('Data saved successfully!', response.data);
-        setMood('');
-        setComment('');
-        setSelectedDate(null);
+    projectsService
+      .createMood(data)
+      .then((response) => {
+        console.log("Data saved successfully!", response.data);
+        setMood("");
+        setComment("");
+        navigate("/moods")
       })
-      .catch(error => {
-        console.error('Error saving data:', error);
+      .catch((error) => {
+        console.error("Error saving data:", error);
       });
   };
 
+  useEffect(() => {
+    projectsService
+      .getAllMoods([])
+      .then((response) => {
+        console.log(response);
+        setMoods(response.data);
+      })
+      .catch((error) => {
+        console.error("Error retrieving moods:", error);
+      });
+  }, []);
 
   return (
     <div>
       <h3>How are you feeling today? </h3>
-      <form>
-       <label>
+      <form onSubmit={handleSave}>
+        <label>
           <select value={mood} onChange={handleMoodChange}>
             <option value="">Select Mood</option>
             <option value="Happy">Happy</option>
@@ -68,21 +81,21 @@ function MoodTracker() {
           </select>
         </label>
         <label>
-
           Comment:
           <textarea value={comment} onChange={handleCommentChange} />
         </label>
-     {/*  <div>
+        {/*  <div>
         <label>
           Date:
           <DatePicker selected={selectedDate} onChange={handleDateChange} />
         </label>
       </div> */}
-      
-      <button onClick={handleSave}>Save</button>
-      </form>
-    </div>
 
+        <button type="submit">Save</button>
+      </form>
+      
+    </div>
+    
   );
 }
 
