@@ -30,7 +30,9 @@ class ProjectsService {
     return this.api.post("/api/create-mood", requestBody);
   };
 
-  
+  getAllMoods = () => {
+    return this.api.get("/api/get-mood");
+  };
 
 
   updateMood = (id, requestBody) => {

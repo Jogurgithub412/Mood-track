@@ -5,7 +5,7 @@ function MoodList() {
   const [allMoods, setMoods] = useState([]);
 
   useEffect(() => {
-    projectsService
+    new projectsService()
       .getAllMoods()
       .then((response) => {
         console.log(response);
@@ -17,7 +17,7 @@ function MoodList() {
   }, []);
 
   const deleteMood = (params) => {
-    projectsService.deleteMood(moodId)
+    new projectsService().deleteMood(moodId)
     .then(()=>{
         navigate('/');
     })

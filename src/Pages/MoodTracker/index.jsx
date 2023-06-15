@@ -34,13 +34,13 @@ function MoodTracker() {
       /*  date: selectedDate.toISOString() // Convert date to ISO string */
     };
 
-    projectsService
+    new projectsService()
       .createMood(data)
       .then((response) => {
         console.log("Data saved successfully!", response.data);
         setMood("");
         setComment("");
-        navigate("/moods")
+        navigate("/moodlist")
       })
       .catch((error) => {
         console.error("Error saving data:", error);
@@ -48,8 +48,8 @@ function MoodTracker() {
   };
 
   useEffect(() => {
-    projectsService
-      .getAllMoods([])
+    new projectsService()
+      .getAllMoods()
       .then((response) => {
         console.log(response);
         setMoods(response.data);
