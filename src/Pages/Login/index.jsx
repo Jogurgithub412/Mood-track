@@ -2,10 +2,11 @@ import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { authService } from "../../Services/auth.services";
 import { AuthContext } from "../../Context/auth.context";
+import axios from "axios";
 import "./styles.css";
 
 
-function LoginPage() {
+const LoginPage = () => {
   // Write State
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -26,25 +27,25 @@ function LoginPage() {
 
     const requestBody = { email, password };
 
-    authService
+   authService
       .login(requestBody)
       .then((response) => {
-        storeToken(response.data.authToken);
+       storeToken(response.data.authToken);
 
-        // authenticate the User
-        authenticateUser();
+       //authenticate the User
+       authenticateUser();
 
         navigate("/home");
       })
       .catch((error) => {
-        const errorDescription = error.response.data.message;
-        setErrorMessage(errorDescription);
-      });
-  };
+       const errorDescription = error.response.data.message;
+       setErrorMessage(errorDescription);
+     });
+    }
 
   return (
     <div className="Login">
-      <h2>Login</h2>
+      <h1>Login</h1>
 
       <form onSubmit={handleLoginSubmit}>
         <label>Email:</label>
@@ -66,4 +67,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage;
+export default LoginPage

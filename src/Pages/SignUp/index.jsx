@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+import axios from "axios";
+
 import { authService } from "../../Services/auth.services";
 
 function SignUpPage() {
@@ -39,10 +41,10 @@ function SignUpPage() {
 
       <form onSubmit={handleSignupSubmit}>
         <div>
-        <div>
-          <label>UserName:</label>
-          <input type="text" name="name" value={name} onChange={handleName} />
-        </div>
+          <div>
+            <label>UserName:</label>
+            <input type="text" name="name" value={name} onChange={handleName} />
+          </div>
           <label>Email:</label>
           <input
             type="email"
@@ -60,15 +62,13 @@ function SignUpPage() {
             onChange={handlePassword}
           />
         </div>
-        
+
         <div>
           <button type="submit">Sign Up</button>
         </div>
       </form>
 
       {errorMessage && <p className="error-message">{errorMessage}</p>}
-
-     
     </div>
   );
 }
