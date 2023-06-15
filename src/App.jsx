@@ -12,6 +12,8 @@ import AboutPage from './Pages/AboutPage';
 import Logout from './Pages/Logout';
 import DatePicker from "react-datepicker";
 import MoodList from "./Pages/MoodList";
+import EditMood from "./Pages/EditMood";
+import MoodDetails from "./Pages/MoodDetails";
 
 
 function App() {
@@ -64,23 +66,26 @@ function App() {
           element={
               <IsPrivate>
               <MoodList />
-              </IsPrivate>
-          
+              </IsPrivate>          
           }
           />
-          {/* <Route
-          path="/edit-mood"
+          <Route
+          path="/edit-mood/:moodId/:commentId"
           element={
               <IsPrivate>
               <EditMood />
               </IsPrivate>
-          
           }
-
         />
-  */}
 
-
+        <Route
+          path="/mood-details/:moodId/:commentId"
+          element={
+              <IsPrivate>
+              <MoodDetails />
+              </IsPrivate>
+          }
+        />
 
       </Routes>
     </div>

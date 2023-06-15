@@ -34,6 +34,9 @@ class ProjectsService {
     return this.api.get("/api/get-mood");
   };
 
+  getMood = (id) => {
+    return this.api.get(`/api/get-mood/${id}`);
+  };
 
   updateMood = (id, requestBody) => {
     return this.api.put(`/api/update-mood/${id}`, requestBody);

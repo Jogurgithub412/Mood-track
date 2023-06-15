@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import projectsService from "../../Services/project.services";
+import { useNavigate } from "react-router-dom";
 
 function MoodList() {
   const [allMoods, setMoods] = useState([]);
@@ -26,12 +27,14 @@ function MoodList() {
     })
 }
 
+const navigate = useNavigate();
+
   return (
     <div>
       <h1>Mood List</h1>
       {
         allMoods.map((mood) => (
-        <div key={mood._id}>
+        <div key={mood._id} onClick={()=>{navigate(`/mood-details/${mood._id}/${mood.comment}`)}}>
           <h2>{mood.mood[0]}</h2>
           <p>{mood.comment}</p>
         </div>

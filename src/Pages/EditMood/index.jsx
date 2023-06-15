@@ -6,11 +6,11 @@ function EditMood() {
   const [mood, setMood] = useState('');
   const [comment, setComment] = useState('');
 
-  const { moodId } = useParams();
+  const { moodId, commentId } = useParams();
   const navigate = useNavigate();
-
+  
   useEffect(() => {
-    ProjectsService.getMood(moodId)
+    new ProjectsService().getMood(moodId)
       .then((response) => {
         const oneMood = response.data;
         setMood(oneMood.mood);
@@ -26,9 +26,9 @@ function EditMood() {
 
     const requestBody = { mood, comment };
 
-    ProjectsService.updateComment(moodId, requestBody)
+    new ProjectsService().updateMood(moodId, requestBody)
       .then(() => {
-        navigate(`/moods/${moodId}`);
+        navigate(`/moodlist`);
       })
       .catch((error) => {
         console.log(error);
@@ -36,7 +36,7 @@ function EditMood() {
   };
 
   const deleteMood = () => {
-    ProjectsService.deleteMood(moodId)
+    new ProjectsService().deleteMood(moodId)
       .then(() => {
         navigate('/moods');
       })
