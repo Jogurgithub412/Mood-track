@@ -1,4 +1,4 @@
-import './Components/styles/styles.css';
+import './Components/Styles/styles.css';
 import { Routes, Route } from 'react-router-dom';
 import NavbarComponent from './Components/Navbar';
 import IsPrivate from './Components/IsPrivate';
