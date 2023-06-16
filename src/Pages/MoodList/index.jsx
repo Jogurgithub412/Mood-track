@@ -19,26 +19,31 @@ function MoodList() {
 
   const deleteMood = (params) => {
     new projectsService().deleteMood(moodId)
-    .then(()=>{
+      .then(() => {
         navigate('/');
-    })
-    .catch((error)=>{
+      })
+      .catch((error) => {
         console.log(error)
-    })
-}
+      })
+  }
 
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <div>
       <h1>Mood List</h1>
       {
         allMoods.map((mood) => (
-        <div key={mood._id} onClick={()=>{navigate(`/mood-details/${mood._id}/${mood.comment}`)}}>
-          <h2>{mood.mood[0]}</h2>
-          <p>{mood.comment}</p>
-        </div>
-      ))}
+          <div key={mood._id} onClick={() => { navigate(`/mood-details/${mood._id}/${mood.comment}`) }}>
+            <h2>{mood.mood[0]}
+              <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+              <span class="material-symbols-outlined ">
+                edit
+              </span>
+            </h2>
+            <p>{mood.comment}</p>
+          </div>
+        ))}
     </div>
   );
 }
