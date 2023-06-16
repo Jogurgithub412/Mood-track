@@ -50,7 +50,7 @@ function MoodDetailsPage() {
 
       
  
-      <Link to="/mood-tracker">
+      <Link to="/home">
         <button>Back to MoodTracker</button>
       </Link>
     </div>

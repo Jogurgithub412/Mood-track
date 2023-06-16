@@ -51,9 +51,9 @@ function LandingPage() {
             </h2>
           </div>
           <div className="image-row">
-            <img src="/src/assets/Images/tunes.png" alt="tunes" />
-            <img src="/src/assets/Images/jupiter.png" alt="jupiter" />
-            <img src="/src/assets/Images/rain.jpg" alt="rain" />
+            <img src="/public/Images/tunes.png" alt="tunes" />
+            <img src="/public/Images/jupiter.png" alt="jupiter" />
+            <img src="/public/Images/rain.jpg" alt="rain" />
           </div>
         </div>
         <div className="video-container">
