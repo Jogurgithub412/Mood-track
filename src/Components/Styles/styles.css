@@ -13,7 +13,7 @@ order: 0;
 flex-grow: 0;
 text-align: right; 
 display: inline-block;
-width: 172px;
+width: 102px;
 margin-right: auto;
 position: relative; 
 top: 12px;
@@ -143,9 +143,6 @@ transform: rotate(0.2deg);
 .body {
     background-color: gainsboro;
 }
-
-
-
 
 .image {
     float: right;

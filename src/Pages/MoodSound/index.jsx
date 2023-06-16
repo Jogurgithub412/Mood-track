@@ -27,7 +27,7 @@ function MoodSound({  }) {
         <div key={moodSound.id} style={{display: 'flex', flexDirection: 'column', gap: 5}}>
           <h3>{moodSound.title}</h3>
           <img src={moodSound.imageUrl} alt={moodSound.title} width={300} />
-          <audio src={moodSound.sound} controls />
+          <audio loop src={moodSound.sound} controls />
         </div>
       ))}
       </div>

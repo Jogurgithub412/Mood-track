@@ -2,7 +2,7 @@ import React from "react";
 function LandingPage() {
   return (
     <div className="landing-page">
-      <header>
+      <header style={{paddingLeft: 45}}>
         <div className="header">
           <h1>Welcome to Mood Tracks</h1>
         </div>
@@ -15,7 +15,7 @@ function LandingPage() {
         </div>
       </header>
 
-      <a href="/signup" className="get-started">
+      <a href="/signup" className="get-started" style={{marginLeft: 45}}>
         Get Started
       </a>
       <main>
