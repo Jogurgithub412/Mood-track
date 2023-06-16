@@ -23,11 +23,9 @@ color: black;
 .navbar_logo {
     margin-right:auto;
     margin-top: auto;
-    width: 478px;
-height: 138px;
-position: relative;
-
-
+    width: 428px;
+    height: 138px;
+    position: relative;
 }
 
 .login-button {
@@ -37,7 +35,7 @@ position: relative;
     align-items: center;
     padding: 25px 31.3265px;
     gap: 20.44px;
-    width: 225px;
+    width: 165px;
     height: 75.18px;
     background: greenyellow;
     color: #FFFFFF;

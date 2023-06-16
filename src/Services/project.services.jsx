@@ -26,6 +26,10 @@ class ProjectsService {
     return this.api.post("/api/projects", requestBody);
   };
 
+  getSounds = () => {
+    return this.api.get("/api/moodsound");
+  };
+
   createMood = (requestBody) => {
     return this.api.post("/api/create-mood", requestBody);
   };

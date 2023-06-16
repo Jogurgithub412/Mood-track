@@ -38,7 +38,7 @@ function EditMood() {
   const deleteMood = () => {
     new ProjectsService().deleteMood(moodId)
       .then(() => {
-        navigate('/moods');
+        navigate('/moodlist');
       })
       .catch((error) => {
         console.log(error);
